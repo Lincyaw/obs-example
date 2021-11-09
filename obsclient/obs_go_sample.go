@@ -77,7 +77,7 @@ func ListBuckets() {
 	}
 }
 
-func setBucketStoragePolicy() {
+func SetBucketStoragePolicy() {
 	input := &obs.SetBucketStoragePolicyInput{}
 	input.Bucket = bucketName
 	input.StorageClass = obs.StorageClassCold
@@ -95,7 +95,7 @@ func setBucketStoragePolicy() {
 	}
 }
 
-func getBucketStoragePolicy() {
+func GetBucketStoragePolicy() {
 	output, err := GetObsClient().GetBucketStoragePolicy(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -111,7 +111,7 @@ func getBucketStoragePolicy() {
 	}
 }
 
-func deleteBucket() {
+func DeleteBucket() {
 	output, err := GetObsClient().DeleteBucket(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -126,7 +126,7 @@ func deleteBucket() {
 	}
 }
 
-func listObjects() {
+func ListObjects() {
 	input := &obs.ListObjectsInput{}
 	input.Bucket = bucketName
 	input.MaxKeys = 10
@@ -149,7 +149,7 @@ func listObjects() {
 	}
 }
 
-func listVersions() {
+func ListVersions() {
 	input := &obs.ListVersionsInput{}
 	input.Bucket = bucketName
 	input.MaxKeys = 10
@@ -176,7 +176,7 @@ func listVersions() {
 	}
 }
 
-func setBucketQuota() {
+func SetBucketQuota() {
 	input := &obs.SetBucketQuotaInput{}
 	input.Bucket = bucketName
 	input.Quota = 1024 * 1024 * 1024
@@ -194,7 +194,7 @@ func setBucketQuota() {
 	}
 }
 
-func getBucketQuota() {
+func GetBucketQuota() {
 	output, err := GetObsClient().GetBucketQuota(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -210,7 +210,7 @@ func getBucketQuota() {
 	}
 }
 
-func getBucketStorageInfo() {
+func GetBucketStorageInfo() {
 	output, err := GetObsClient().GetBucketStorageInfo(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -226,7 +226,7 @@ func getBucketStorageInfo() {
 	}
 }
 
-func getBucketLocation() {
+func GetBucketLocation() {
 	output, err := GetObsClient().GetBucketLocation(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -242,7 +242,7 @@ func getBucketLocation() {
 	}
 }
 
-func setBucketAcl() {
+func SetBucketAcl() {
 	input := &obs.SetBucketAclInput{}
 	input.Bucket = bucketName
 	//		input.ACL = obs.AclPublicRead
@@ -275,7 +275,7 @@ func setBucketAcl() {
 	}
 }
 
-func getBucketAcl() {
+func GetBucketAcl() {
 	output, err := GetObsClient().GetBucketAcl(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -294,7 +294,7 @@ func getBucketAcl() {
 	}
 }
 
-func setBucketPolicy() {
+func SetBucketPolicy() {
 	input := &obs.SetBucketPolicyInput{}
 	input.Bucket = bucketName
 	input.Policy = "your policy"
@@ -312,7 +312,7 @@ func setBucketPolicy() {
 	}
 }
 
-func getBucketPolicy() {
+func GetBucketPolicy() {
 	output, err := GetObsClient().GetBucketPolicy(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -328,7 +328,7 @@ func getBucketPolicy() {
 	}
 }
 
-func deleteBucketPolicy() {
+func DeleteBucketPolicy() {
 	output, err := GetObsClient().DeleteBucketPolicy(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -343,7 +343,7 @@ func deleteBucketPolicy() {
 	}
 }
 
-func setBucketCors() {
+func SetBucketCors() {
 	input := &obs.SetBucketCorsInput{}
 	input.Bucket = bucketName
 
@@ -380,7 +380,7 @@ func setBucketCors() {
 	}
 }
 
-func getBucketCors() {
+func GetBucketCors() {
 	output, err := GetObsClient().GetBucketCors(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -400,7 +400,7 @@ func getBucketCors() {
 	}
 }
 
-func deleteBucketCors() {
+func DeleteBucketCors() {
 	output, err := GetObsClient().DeleteBucketCors(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -415,7 +415,7 @@ func deleteBucketCors() {
 	}
 }
 
-func setBucketVersioning() {
+func SetBucketVersioning() {
 	input := &obs.SetBucketVersioningInput{}
 	input.Bucket = bucketName
 	input.Status = obs.VersioningStatusEnabled
@@ -433,7 +433,7 @@ func setBucketVersioning() {
 	}
 }
 
-func getBucketVersioning() {
+func GetBucketVersioning() {
 	output, err := GetObsClient().GetBucketVersioning(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -449,7 +449,7 @@ func getBucketVersioning() {
 	}
 }
 
-func headBucket() {
+func HeadBucket() {
 	output, err := GetObsClient().HeadBucket(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -462,7 +462,7 @@ func headBucket() {
 	}
 }
 
-func getBucketMetadata() {
+func GetBucketMetadata() {
 	input := &obs.GetBucketMetadataInput{}
 	input.Bucket = bucketName
 	output, err := GetObsClient().GetBucketMetadata(input)
@@ -478,7 +478,7 @@ func getBucketMetadata() {
 	}
 }
 
-func setBucketLoggingConfiguration() {
+func SetBucketLoggingConfiguration() {
 	input := &obs.SetBucketLoggingConfigurationInput{}
 	input.Bucket = bucketName
 	input.TargetBucket = "target-bucket"
@@ -511,7 +511,7 @@ func setBucketLoggingConfiguration() {
 	}
 }
 
-func getBucketLoggingConfiguration() {
+func GetBucketLoggingConfiguration() {
 	output, err := GetObsClient().GetBucketLoggingConfiguration(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -530,7 +530,7 @@ func getBucketLoggingConfiguration() {
 	}
 }
 
-func setBucketWebsiteConfiguration() {
+func SetBucketWebsiteConfiguration() {
 	input := &obs.SetBucketWebsiteConfigurationInput{}
 	input.Bucket = bucketName
 	//	input.RedirectAllRequestsTo.HostName = "www.a.com"
@@ -574,7 +574,7 @@ func setBucketWebsiteConfiguration() {
 	}
 }
 
-func getBucketWebsiteConfiguration() {
+func GetBucketWebsiteConfiguration() {
 	output, err := GetObsClient().GetBucketWebsiteConfiguration(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -597,7 +597,7 @@ func getBucketWebsiteConfiguration() {
 	}
 }
 
-func deleteBucketWebsiteConfiguration() {
+func DeleteBucketWebsiteConfiguration() {
 	output, err := GetObsClient().DeleteBucketWebsiteConfiguration(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -612,7 +612,7 @@ func deleteBucketWebsiteConfiguration() {
 	}
 }
 
-func setBucketLifecycleConfiguration() {
+func SetBucketLifecycleConfiguration() {
 	input := &obs.SetBucketLifecycleConfigurationInput{}
 	input.Bucket = bucketName
 
@@ -670,7 +670,7 @@ func setBucketLifecycleConfiguration() {
 	}
 }
 
-func getBucketLifecycleConfiguration() {
+func GetBucketLifecycleConfiguration() {
 	output, err := GetObsClient().GetBucketLifecycleConfiguration(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -709,7 +709,7 @@ func getBucketLifecycleConfiguration() {
 	}
 }
 
-func deleteBucketLifecycleConfiguration() {
+func DeleteBucketLifecycleConfiguration() {
 	output, err := GetObsClient().DeleteBucketLifecycleConfiguration(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -724,7 +724,7 @@ func deleteBucketLifecycleConfiguration() {
 	}
 }
 
-func setBucketTagging() {
+func SetBucketTagging() {
 	input := &obs.SetBucketTaggingInput{}
 	input.Bucket = bucketName
 
@@ -746,7 +746,7 @@ func setBucketTagging() {
 	}
 }
 
-func getBucketTagging() {
+func GetBucketTagging() {
 	output, err := GetObsClient().GetBucketTagging(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -764,7 +764,7 @@ func getBucketTagging() {
 	}
 }
 
-func deleteBucketTagging() {
+func DeleteBucketTagging() {
 	output, err := GetObsClient().DeleteBucketTagging(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -779,7 +779,7 @@ func deleteBucketTagging() {
 	}
 }
 
-func setBucketNotification() {
+func SetBucketNotification() {
 	input := &obs.SetBucketNotificationInput{}
 	input.Bucket = bucketName
 	var topicConfigurations [1]obs.TopicConfiguration
@@ -809,7 +809,7 @@ func setBucketNotification() {
 	}
 }
 
-func getBucketNotification() {
+func GetBucketNotification() {
 	output, err := GetObsClient().GetBucketNotification(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -828,7 +828,7 @@ func getBucketNotification() {
 	}
 }
 
-func setBucketEncryption() {
+func SetBucketEncryption() {
 	input := &obs.SetBucketEncryptionInput{}
 	input.Bucket = bucketName
 	input.SSEAlgorithm = obs.DEFAULT_SSE_KMS_ENCRYPTION
@@ -847,7 +847,7 @@ func setBucketEncryption() {
 	}
 }
 
-func getBucketEncryption() {
+func GetBucketEncryption() {
 	output, err := GetObsClient().GetBucketEncryption(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -867,7 +867,7 @@ func getBucketEncryption() {
 	}
 }
 
-func deleteBucketEncryption() {
+func DeleteBucketEncryption() {
 	output, err := GetObsClient().DeleteBucketEncryption(bucketName)
 	if err == nil {
 		fmt.Printf("StatusCode:%d, RequestId:%s\n", output.StatusCode, output.RequestId)
@@ -882,7 +882,7 @@ func deleteBucketEncryption() {
 	}
 }
 
-func listMultipartUploads() {
+func ListMultipartUploads() {
 	input := &obs.ListMultipartUploadsInput{}
 	input.Bucket = bucketName
 	input.MaxUploads = 10
@@ -904,7 +904,7 @@ func listMultipartUploads() {
 	}
 }
 
-func deleteObject() {
+func DeleteObject() {
 	input := &obs.DeleteObjectInput{}
 	input.Bucket = bucketName
 	input.Key = objectKey
@@ -923,7 +923,7 @@ func deleteObject() {
 	}
 }
 
-func deleteObjects() {
+func DeleteObjects() {
 	input := &obs.DeleteObjectsInput{}
 	input.Bucket = bucketName
 	var objects [3]obs.ObjectToDelete
@@ -952,7 +952,7 @@ func deleteObjects() {
 	}
 }
 
-func setObjectAcl() {
+func SetObjectAcl() {
 	input := &obs.SetObjectAclInput{}
 	input.Bucket = bucketName
 	input.Key = objectKey
@@ -986,7 +986,7 @@ func setObjectAcl() {
 	}
 }
 
-func getObjectAcl() {
+func GetObjectAcl() {
 	input := &obs.GetObjectAclInput{}
 	input.Bucket = bucketName
 	input.Key = objectKey
@@ -1008,7 +1008,7 @@ func getObjectAcl() {
 	}
 }
 
-func restoreObject() {
+func RestoreObject() {
 	input := &obs.RestoreObjectInput{}
 	input.Bucket = bucketName
 	input.Key = objectKey
@@ -1028,7 +1028,7 @@ func restoreObject() {
 	}
 }
 
-func getObjectMetadata() {
+func GetObjectMetadata() {
 	input := &obs.GetObjectMetadataInput{}
 	input.Bucket = bucketName
 	input.Key = objectKey
@@ -1046,7 +1046,7 @@ func getObjectMetadata() {
 	}
 }
 
-func copyObject() {
+func CopyObject() {
 	input := &obs.CopyObjectInput{}
 	input.Bucket = bucketName
 	input.Key = objectKey
@@ -1071,7 +1071,7 @@ func copyObject() {
 	}
 }
 
-func initiateMultipartUpload() {
+func InitiateMultipartUpload() {
 	input := &obs.InitiateMultipartUploadInput{}
 	input.Bucket = bucketName
 	input.Key = objectKey
@@ -1091,7 +1091,7 @@ func initiateMultipartUpload() {
 	}
 }
 
-func abortMultipartUpload() {
+func AbortMultipartUpload() {
 	input := &obs.ListMultipartUploadsInput{}
 	input.Bucket = bucketName
 	output, err := GetObsClient().ListMultipartUploads(input)
@@ -1117,7 +1117,7 @@ func abortMultipartUpload() {
 	}
 }
 
-func putObject() {
+func PutObject() {
 	input := &obs.PutObjectInput{}
 	input.Bucket = bucketName
 	input.Key = objectKey
@@ -1138,7 +1138,7 @@ func putObject() {
 	}
 }
 
-func putFile() {
+func PutFile() {
 	input := &obs.PutFileInput{}
 	input.Bucket = bucketName
 	input.Key = objectKey
@@ -1158,7 +1158,7 @@ func putFile() {
 	}
 }
 
-func uploadPart() {
+func UploadPart() {
 	sourceFile := "localfile"
 	var partSize int64 = 1024 * 1024 * 5
 	fileInfo, statErr := os.Stat(sourceFile)
@@ -1199,7 +1199,7 @@ func uploadPart() {
 	}
 }
 
-func listParts() {
+func ListParts() {
 	input := &obs.ListPartsInput{}
 	input.Bucket = bucketName
 	input.Key = objectKey
@@ -1222,7 +1222,7 @@ func listParts() {
 	}
 }
 
-func completeMultipartUpload() {
+func CompleteMultipartUpload() {
 	input := &obs.CompleteMultipartUploadInput{}
 	input.Bucket = bucketName
 	input.Key = objectKey
@@ -1247,7 +1247,7 @@ func completeMultipartUpload() {
 	}
 }
 
-func copyPart() {
+func CopyPart() {
 
 	sourceBucket := "source-bucket"
 	sourceKey := "source-key"
@@ -1294,7 +1294,7 @@ func copyPart() {
 	}
 }
 
-func getObject() {
+func GetObject() {
 	input := &obs.GetObjectInput{}
 	input.Bucket = bucketName
 	input.Key = objectKey

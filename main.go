@@ -11,4 +11,8 @@ func main() {
 	defer obs.CloseLog()
 	obs.InitLog("/temp/OBS-SDK.log", 1024*1024*100, 5, obs.LEVEL_WARN, false)
 	obsClient.ListBuckets()
+	obsClient.ListObjects()
+	obsClient.PutObject()
+	obsClient.ListObjects()
+
 }
